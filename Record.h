@@ -5,6 +5,7 @@
 #include "Thing.h"
 #include "GPS.h"
 #include "Time.h"
+#include "ecs36b_Common.h"
 
 
 class Record

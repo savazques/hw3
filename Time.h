@@ -1,6 +1,7 @@
 #ifndef _TIME_H
 #define _TIME_H 
 
+#include "ecs36b_Common.h"
 
 class Time
 {

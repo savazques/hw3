@@ -50,11 +50,17 @@ Person.o:	Person.cpp Person.h $(INC)
 Thing.o:	Thing.cpp Thing.h $(INC)
 	$(CC) -c $(CFLAGS) Thing.cpp
 
+Record.o: 	Record.cpp Record.h $(INC) 
+	$(CC) -c $(CFLAGS) Record.cpp
+
+Time.o:		Time.cpp Time.h $(INC)
+	$(CC) -c $(CFLAGS) Time.cpp
+
 #IOT_Thing.o:	IOT_Thing.cpp IOT_Thing.h Network.h $(INC)
 #	$(CC) -c $(CFLAGS) IOT_Thing.cpp
 
-main.o:	 GPS.h Thing.h Person.h  $(INC)
-#	$(CC) -c $(CFLAGS) test_hw3_f2022.cpp
+main.o:	 GPS.h Thing.h Person.h Record.h Time.h $(INC)
+	$(CC) -c $(CFLAGS) main.cpp
 
 
 clean:
