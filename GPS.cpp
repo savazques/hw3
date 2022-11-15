@@ -1,5 +1,6 @@
 #include "GPS.h"
 
+
 GPS::GPS()
 {
     this->Description = " "; 

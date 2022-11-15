@@ -28,18 +28,13 @@ LDFLAGS = 	-L/opt/homebrew/include/lib -ljsoncpp
 
 
 # rules.
-all: 	Main
+all: 	main
 
 #
 #
-Main.o:		main.cpp 
-	$(CC) -c  main.cpp 
 
 GPS.o:		GPS.cpp GPS.h $(INC)
 	$(CC) -c $(CFLAGS) GPS.cpp
-
-#Network.o:	Network.cpp Network.h $(INC)
-#	$(CC) -c $(CFLAGS) Network.cpp
 
 #JvTime.o:	JvTime.cpp JvTime.h $(INC)
 #	$(CC) -c $(CFLAGS) JvTime.cpp
@@ -56,12 +51,10 @@ Record.o: 	Record.cpp Record.h $(INC)
 Time.o:		Time.cpp Time.h $(INC)
 	$(CC) -c $(CFLAGS) Time.cpp
 
-#IOT_Thing.o:	IOT_Thing.cpp IOT_Thing.h Network.h $(INC)
-#	$(CC) -c $(CFLAGS) IOT_Thing.cpp
-
-main.o:	 GPS.h Thing.h Person.h Record.h Time.h $(INC)
+main.o:		main.cpp GPS.h Thing.h Person.h Record.h Time.h $(INC)
 	$(CC) -c $(CFLAGS) main.cpp
 
-
+main:		Person.o main.o GPS.o Thing.o Time.o Record.o 
+		g++ -std=c++14 main.o GPS.o Thing.o Time.o Person.o Record.o -o main $(LDFLAGS)
 clean:
 	rm -f *.o *~ core Main

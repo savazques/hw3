@@ -1,5 +1,11 @@
 #include "Person.h"
 
+
+Person::Person()
+{
+    this->Name = ""; 
+}
+
 Person::Person(string name)
 {
     this->Name = name; 
