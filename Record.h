@@ -22,7 +22,8 @@ class Record
     public:   
         Record();  
         Record(Person, Person,  Thing, Thing, GPS, Time);
-        Json::Value dump2JSON(); 
+        virtual Json::Value dump2JSON(); 
+        virtual bool JSON2Object(Json::Value); 
 }; 
 
 #endif

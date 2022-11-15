@@ -9,7 +9,8 @@ class Time
     string when; 
     Time(); 
     Time(string); 
-    Json::Value dump2JSON();  
+    virtual Json::Value dump2JSON();  
+    virtual bool JSON2Object(Json::Value); 
    
 }; 
 

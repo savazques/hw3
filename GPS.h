@@ -9,7 +9,8 @@ class GPS
     string Description;
     GPS();
     GPS(string);  
-    Json::Value dump2JSON();  
+    virtual Json::Value dump2JSON(); 
+    virtual bool JSON2Object(Json::Value); 
 
     private: 
 }; 

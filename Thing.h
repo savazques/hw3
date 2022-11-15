@@ -10,7 +10,8 @@ class Thing
    string Description;
    Thing();
    Thing(string); 
-   Json::Value dump2JSON(); 
+   virtual Json::Value dump2JSON(); 
+   virtual bool JSON2Object(Json::Value); 
 }; 
 
 #endif
