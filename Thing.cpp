@@ -17,3 +17,9 @@ Json::Value Thing::dump2JSON(void)
     return result;
 
 }
+
+bool
+Thing::JSON2Object(Json::Value arg_j)
+{
+    
+}

@@ -18,3 +18,9 @@ Json::Value Time::dump2JSON(void)
     result["when"] = when;
     return result;
 }
+
+bool 
+Time::JSON2Object(Json::Value)
+{
+    
+}

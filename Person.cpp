@@ -18,3 +18,9 @@ Json::Value Person::dump2JSON(void)
     return result;    
     
 }
+
+bool
+Person::JSON2Object(Json::Value arg_jv)
+{
+    
+}

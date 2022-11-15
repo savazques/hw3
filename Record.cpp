@@ -53,3 +53,8 @@ Json::Value Record::dump2JSON(void)
 
     return result;
 }
+
+bool Record::JSON2Object(Json::Value arg_jv)
+{
+    
+}

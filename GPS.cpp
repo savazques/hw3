@@ -18,3 +18,9 @@ Json::Value GPS::dump2JSON(void)
 
     return result;
 }
+
+bool
+GPS::JSON2Object(Json::Value arg_jv)
+{
+    
+}
