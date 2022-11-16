@@ -1,5 +1,5 @@
-#ifndef ECS36B_COMMON_H
-#define ECS36b_COMMON_H
+#ifndef _ECS36B_COMMON_H
+#define _ECS36B_COMMON_H
 
 // ecs36b_Common.h
 

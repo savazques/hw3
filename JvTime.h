@@ -22,7 +22,8 @@ class JvTime
   struct std::tm * getStdTM(void);
   int setStdTM(struct std::tm *);
   std::string * getTimeString(void);
-  Json::Value dump2JSON();
+  virtual Json::Value dump2JSON();
+  virtual bool JSON2Object(Json::Value);
 };
 
 JvTime *getNowJvTime(void);
