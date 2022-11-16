@@ -32,5 +32,7 @@ Person::JSON2Object(Json::Value arg_jv)
     {
         return false;
     }
+    this->Name = (arg_jv["Name"]).asString();
 
+    return true;
 }

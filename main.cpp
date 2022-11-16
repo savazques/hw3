@@ -67,6 +67,17 @@ if (rc != 0)
         exit(-1);
     }
 
+Json::Value record2_jv;
+rc = myFile2JSON(filename2, &record2_jv);
+if (rc != 0)
+    {
+        std::cout << "myJSON2File error" <<std::endl;
+        exit (-1); 
+    } 
+Record new_record2 {}; 
+    new_record2.JSON2Object(record2_jv); 
+    std::cout << (new_record2.dump2JSON()).toStyledString() << std:: endl;
+
 Record Record3(Wolf, RedRidingHood, Anotherthing, NULLpt, Woods, when); 
 cout<<"Record 3"<<endl;
 Record3.dump2JSON(); 
@@ -78,6 +89,18 @@ if (rc != 0)
         std::cout << "myJSON2File error"<<std::endl;
         exit(-1);
     }
+Json::Value record3_jv;
+rc = myFile2JSON(filename1, &record3_jv);
+if (rc != 0)
+    {
+        std::cout << "myJSON2File error" <<std::endl;
+        exit (-1); 
+    } 
+
+Record new_record3 {}; 
+    new_record3.JSON2Object(record3_jv); 
+    std::cout << (new_record3.dump2JSON()).toStyledString() << std:: endl;
+
 
 Record Record4(Grandma, NULLptr, Home, NULLpt, OakTrees, when); 
 cout<<"Record 4"<<endl;
@@ -90,6 +113,18 @@ if (rc != 0)
         std::cout << "myJSON2File error"<<std::endl;
         exit(-1);
     }
+
+Json::Value record4_jv;
+rc = myFile2JSON(filename1, &record4_jv);
+if (rc != 0)
+    {
+        std::cout << "myJSON2File error" <<std::endl;
+        exit (-1); 
+    } 
+
+Record new_record4 {}; 
+    new_record4.JSON2Object(record4_jv); 
+    std::cout << (new_record4.dump2JSON()).toStyledString() << std:: endl;
 
 return 0; 
 

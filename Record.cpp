@@ -77,9 +77,7 @@ if (((arg_jv["loc"]).isNull() == true ) || ((arg_jv["loc"]).isNull() == true)
 
 
 
-
-
-
+return true;
 
 
 
