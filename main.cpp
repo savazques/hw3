@@ -37,7 +37,15 @@ Record Record1(RedRidingHood, NULLptr,  Cap, NULLpt, where, when);
 cout<<"Record 1"<<endl; 
 Json::Value jv = Record1.dump2JSON(); 
 
+bzero(name_buff, 256);
+sprintf(name_buff, "./json_objects/%s_%s.json", "Record 1", "000000001");
 rc = myJSON2File(name_buff, &jv);
+if (rc != 0)
+    {
+        std::cout << "myJSON2File error"<<std::endl;
+        exit(-1);
+    }
+
 
 Record Record2(Mom, RedRidingHood, Cake, Wine, where, when );
 cout<<"Record 2"<<endl;
