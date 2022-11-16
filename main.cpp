@@ -43,6 +43,16 @@ if (rc != 0)
         std::cout << "myJSON2File error"<<std::endl;
         exit(-1);
     }
+Json::Value record1_jv;
+rc = myFile2JSON(filename1, &record1_jv);
+if (rc != 0)
+    {
+        std::cout << "myJSON2File error" <<std::endl;
+        exit (-1); 
+    } 
+Record new_record1 {}; 
+    new_record1.JSON2Object(record1_jv); 
+    std::cout << (new_record1.dump2JSON()).toStyledString() << std:: endl;
 
 
 Record Record2(Mom, RedRidingHood, Cake, Wine, where, when );

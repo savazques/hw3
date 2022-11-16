@@ -23,4 +23,14 @@ bool
 Person::JSON2Object(Json::Value arg_jv)
 {
     
+    if ((arg_jv.isNull() == true) || (arg_jv.isObject() != true))
+    {
+        return false;
+    }
+
+    if (((arg_jv["Name"]).isNull() == true) || ((arg_jv["Name"]).isString() != true))
+    {
+        return false;
+    }
+
 }

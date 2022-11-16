@@ -55,5 +55,33 @@ Json::Value Record::dump2JSON(void)
 
 bool Record::JSON2Object(Json::Value arg_jv)
 {
-    
+    if ((arg_jv.isNull() == true) || (arg_jv.isObject() != true))
+    {
+        return false; 
+    }
+
+
+if (((arg_jv["loc"]).isNull() == true ) || ((arg_jv["loc"]).isNull() == true) 
+    || ((arg_jv["thing"]).isNull() == true) || ((arg_jv["thing"]).isNull() == true) 
+    || ((arg_jv["person"]).isObject() != true) || ((arg_jv["person"]).isObject() != true) 
+    || ((arg_jv["when"]).isObject() != true) || ((arg_jv["when"]).isObject() != true)) 
+{
+    return false; 
+}
+
+(this -> loc).JSON2Object(arg_jv["loc"]); 
+(this -> thing).JSON2Object(arg_jv["item"]);
+(this -> person).JSON2Object(arg_jv["person"]);
+(this -> when).JSON2Object(arg_jv["when"]); 
+
+
+
+
+
+
+
+
+
+
+
 }
