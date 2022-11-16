@@ -30,12 +30,14 @@ GPS OakTrees{"3 large  oak trees"};
 Thing NULLpt{""};
 Person NULLptr{""}; 
 
-
+int rc; 
+char name_buff[256]; 
 
 Record Record1(RedRidingHood, NULLptr,  Cap, NULLpt, where, when);
 cout<<"Record 1"<<endl; 
-Record1.dump2JSON(); 
+Json::Value jv = Record1.dump2JSON(); 
 
+rc = myJSON2File(name_buff, &jv);
 
 Record Record2(Mom, RedRidingHood, Cake, Wine, where, when );
 cout<<"Record 2"<<endl;

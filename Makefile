@@ -20,7 +20,9 @@ CFLAGS = -g -I/opt/homebrew/include
 
 LDFLAGS = 	-L/opt/homebrew/include/lib -ljsoncpp
 
-
+INC = ecs36b_Common.h
+INC_Cl = GPS.h Person.h Thing.h Time.h
+OBJ = GPS.o Person.o Thing.o Time.o
 
 # old: LDFLAGS = 	-lc++ -ljsoncpp
 
@@ -42,6 +44,9 @@ GPS.o:		GPS.cpp GPS.h $(INC)
 Person.o:	Person.cpp Person.h $(INC)
 	$(CC) -c $(CFLAGS) Person.cpp
 
+ecs36b_JSON.o: ecs36b_JSON.cpp $(INC)
+	$(CC) -c $(CFLAGS) ecs36b_JSON.cpp	
+
 Thing.o:	Thing.cpp Thing.h $(INC)
 	$(CC) -c $(CFLAGS) Thing.cpp
 
@@ -55,6 +60,6 @@ main.o:		main.cpp GPS.h Thing.h Person.h Record.h Time.h $(INC)
 	$(CC) -c $(CFLAGS) main.cpp
 
 main:		Person.o main.o GPS.o Thing.o Time.o Record.o 
-		g++ -std=c++14 main.o GPS.o Thing.o Time.o Person.o Record.o -o main $(LDFLAGS)
+	$(CC) -o  main.o GPS.o Thing.o Time.o Person.o Record.o ecs36b_JSON.o main $(LDFLAGS)
 clean:
 	rm -f *.o *~ core Main
