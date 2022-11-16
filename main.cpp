@@ -31,15 +31,13 @@ Thing NULLpt{""};
 Person NULLptr{""}; 
 
 int rc; 
-char name_buff[256]; 
 
 Record Record1(RedRidingHood, NULLptr,  Cap, NULLpt, where, when);
 cout<<"Record 1"<<endl; 
 Json::Value jv = Record1.dump2JSON(); 
 
-bzero(name_buff, 256);
-sprintf(name_buff, "./json_objects/%s_%s.json", "Record 1", "000000001");
-rc = myJSON2File(name_buff, &jv);
+char filename1[] = "Record1.json";
+rc = myJSON2File(filename1, &jv);
 if (rc != 0)
     {
         std::cout << "myJSON2File error"<<std::endl;
@@ -51,14 +49,37 @@ Record Record2(Mom, RedRidingHood, Cake, Wine, where, when );
 cout<<"Record 2"<<endl;
 Record2.dump2JSON();
 
+char filename2[] = "Record2.json";
+rc = myJSON2File(filename2, &jv);
+if (rc != 0)
+    {
+        std::cout << "myJSON2File error"<<std::endl;
+        exit(-1);
+    }
+
 Record Record3(Wolf, RedRidingHood, Anotherthing, NULLpt, Woods, when); 
 cout<<"Record 3"<<endl;
 Record3.dump2JSON(); 
+
+char filename3[] = "Record3.json";
+rc = myJSON2File(filename3, &jv);
+if (rc != 0)
+    {
+        std::cout << "myJSON2File error"<<std::endl;
+        exit(-1);
+    }
 
 Record Record4(Grandma, NULLptr, Home, NULLpt, OakTrees, when); 
 cout<<"Record 4"<<endl;
 Record4.dump2JSON(); 
 
+char filename4[] = "Record4.json";
+rc = myJSON2File(filename4, &jv);
+if (rc != 0)
+    {
+        std::cout << "myJSON2File error"<<std::endl;
+        exit(-1);
+    }
 
 return 0; 
 
