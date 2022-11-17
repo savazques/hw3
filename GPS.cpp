@@ -22,5 +22,19 @@ Json::Value GPS::dump2JSON(void)
 bool
 GPS::JSON2Object(Json::Value arg_jv)
 {
-    
+    if( (arg_jv.isNull() == true) || (arg_jv.isObject() != true) )
+    {
+        return false;
+    }
+
+
+    if (((arg_jv["area"]).isNull( ) == true) || ((arg_jv["area"]).isString() != true) )
+    {
+        return false;
+    }
+
+    this -> Description = (arg_jv["area"]).asString();
+
+
+    return true;
 }

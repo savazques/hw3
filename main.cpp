@@ -30,27 +30,84 @@ GPS OakTrees{"3 large  oak trees"};
 Thing NULLpt{""};
 Person NULLptr{""}; 
 
-int rc; 
-char name_buff[256]; 
+int rc;
 
 Record Record1(RedRidingHood, NULLptr,  Cap, NULLpt, where, when);
-cout<<"Record 1"<<endl; 
+//cout<<"Record 1"<<endl; 
+//dumping to JSON
 Json::Value jv = Record1.dump2JSON(); 
 
-rc = myJSON2File(name_buff, &jv);
+char filename1[] = "Record1.json";
+rc = myJSON2File(filename1, &jv);
+if (rc != 0)
+    {
+        std::cout << "myJSON2File error"<<std::endl;
+        exit(-1);
+    }
+Json::Value record1_jv;
+rc = myFile2JSON(filename1, &record1_jv);
+if (rc != 0)
+    {
+        std::cout << "myJSON2File error" <<std::endl;
+        exit (-1); 
+    } 
+Record new_record1 {}; 
+    new_record1.JSON2Object(record1_jv); 
+    std::cout << (new_record1.dump2JSON()).toStyledString() << std:: endl;
+
 
 Record Record2(Mom, RedRidingHood, Cake, Wine, where, when );
-cout<<"Record 2"<<endl;
-Record2.dump2JSON();
+//cout<<"Record 2"<<endl;
+//dumping 2 json 
+Json::Value jv2 = Record2.dump2JSON();
+
+char filename2[] = "Record2.json";
+  myJSON2File(filename2, &jv2);
+
+
+Json::Value record2_jv;
+myFile2JSON(filename2, &record2_jv);
+//record2_jv holds JSON values from the JSONfiles we created 
+//from myJSON2File
+
+//creating a new record object and filling them in with JSON2Object
+Record new_record2 {}; 
+    new_record2.JSON2Object(record2_jv); 
+    std::cout << (new_record2.dump2JSON()).toStyledString() << std::endl;
+
 
 Record Record3(Wolf, RedRidingHood, Anotherthing, NULLpt, Woods, when); 
-cout<<"Record 3"<<endl;
-Record3.dump2JSON(); 
+//cout<<"Record 3"<<endl;
+Json::Value jv3 = Record3.dump2JSON(); 
+
+char filename3[] = "Record3.json";
+ myJSON2File(filename3, &jv3);
+
+Json::Value record3_jv;
+myFile2JSON(filename3, &record3_jv);
+ 
+
+Record new_record3 {}; 
+    new_record3.JSON2Object(record3_jv); 
+    std::cout << (new_record3.dump2JSON()).toStyledString() << std:: endl;
+
 
 Record Record4(Grandma, NULLptr, Home, NULLpt, OakTrees, when); 
-cout<<"Record 4"<<endl;
-Record4.dump2JSON(); 
+//cout<<"Record 4"<<endl;
+Json::Value jv4 = Record4.dump2JSON(); 
 
+char filename4[] = "Record4.json";
+myJSON2File(filename4, &jv4);
+
+
+Json::Value record4_jv;
+myFile2JSON(filename4, &record4_jv);
+
+//cout<< record4_jv << endl;
+
+Record new_record4 {}; 
+    new_record4.JSON2Object(record4_jv); 
+   std::cout << (new_record4.dump2JSON()).toStyledString() << std:: endl;
 
 return 0; 
 
