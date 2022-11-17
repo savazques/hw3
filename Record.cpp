@@ -71,14 +71,14 @@ if  (((arg_jv["GPS"]).isNull() == true ) ||
 {
     return false; 
 }
-(this -> loc).JSON2Object(arg_jv["area"]); 
+(this -> loc).JSON2Object(arg_jv["GPS"]); 
 
 if ( ((arg_jv["Thing"]).isNull() == true) ||  
     ((arg_jv["Thing"]).isObject() != true) )
 {
     return false;
 }
-(this -> thing).JSON2Object(arg_jv["item"]);
+(this -> thing).JSON2Object(arg_jv["Thing"]);
 
 if ( ((arg_jv["Person 1"]).isNull() == true) || 
     ((arg_jv["Person 1"]).isObject() != true) )

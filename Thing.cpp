@@ -27,7 +27,7 @@ Thing::JSON2Object(Json::Value arg_jv)
     }
 
 
-    if (((arg_jv["Description"]).isNull( ) == true) || ((arg_jv["Description"]).isString() != true) )
+    if (((arg_jv["item"]).isNull( ) == true) || ((arg_jv["item"]).isString() != true) )
     {
         return false;
     }
