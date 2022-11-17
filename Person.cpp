@@ -3,7 +3,7 @@
 
 Person::Person()
 {
-    this->Name = "    "; 
+    this->Name = " "; 
 }
 
 Person::Person(string name)

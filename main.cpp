@@ -30,7 +30,7 @@ GPS OakTrees{"3 large  oak trees"};
 Thing NULLpt{""};
 Person NULLptr{""}; 
 
-
+int rc;
 
 Record Record1(RedRidingHood, NULLptr,  Cap, NULLpt, where, when);
 cout<<"Record 1"<<endl; 
@@ -38,7 +38,7 @@ cout<<"Record 1"<<endl;
 Json::Value jv = Record1.dump2JSON(); 
 
 char filename1[] = "Record1.json";
-int rc = myJSON2File(filename1, &jv);
+rc = myJSON2File(filename1, &jv);
 if (rc != 0)
     {
         std::cout << "myJSON2File error"<<std::endl;
@@ -62,16 +62,18 @@ cout<<"Record 2"<<endl;
 Json::Value jv2 = Record2.dump2JSON();
 
 char filename2[] = "Record2.json";
-int rv = myJSON2File(filename2, &jv2);
-if (rv != 0)
+ rc = myJSON2File(filename2, &jv2);
+if (rc != 0)
     {
         std::cout << "myJSON2File error"<<std::endl;
         exit(-1);
     }
 
 Json::Value record2_jv;
-rv = myFile2JSON(filename2, &record2_jv);
-if (rv != 0)
+rc = myFile2JSON(filename2, &record2_jv);
+//record2_jv holds JSON values from the JSONfiles we created 
+//from myJSON2File
+if (rc != 0)
     {
         std::cout << "myJSON2File error" << rc << std::endl;
         exit (-1); 
@@ -79,7 +81,7 @@ if (rv != 0)
 //creating a new record object and filling them in with JSON2Object
 Record new_record2 {}; 
     new_record2.JSON2Object(record2_jv); 
-    std::cout << (new_record2.dump2JSON()).toStyledString() << std:: endl;
+    std::cout << (new_record2.dump2JSON()).toStyledString() << std::endl;
 
 
 Record Record3(Wolf, RedRidingHood, Anotherthing, NULLpt, Woods, when); 
@@ -87,15 +89,15 @@ cout<<"Record 3"<<endl;
 Json::Value jv3 = Record3.dump2JSON(); 
 
 char filename3[] = "Record3.json";
-int rj = myJSON2File(filename3, &jv3);
-if (rj != 0)
+rc= myJSON2File(filename3, &jv3);
+if (rc != 0)
     {
         std::cout << "myJSON2File error"<<std::endl;
         exit(-1);
     }
 Json::Value record3_jv;
-rj = myFile2JSON(filename3, &record3_jv);
-if (rj != 0)
+rc= myFile2JSON(filename3, &record3_jv);
+if (rc != 0)
     {
         std::cout << "myJSON2File error" <<std::endl;
         exit (-1); 
@@ -111,16 +113,16 @@ cout<<"Record 4"<<endl;
 Json::Value jv4 = Record4.dump2JSON(); 
 
 char filename4[] = "Record4.json";
-int ra = myJSON2File(filename4, &jv4);
-if (ra != 0)
+rc = myJSON2File(filename4, &jv4);
+if (rc != 0)
     {
         std::cout << "myJSON2File error"<<std::endl;
         exit(-1);
     }
 
 Json::Value record4_jv;
-ra = myFile2JSON(filename4, &record4_jv);
-if (ra != 0)
+rc= myFile2JSON(filename4, &record4_jv);
+if (rc != 0)
     {
         std::cout << "myJSON2File error" <<std::endl;
         exit (-1); 

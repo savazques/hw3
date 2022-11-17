@@ -15,13 +15,13 @@ Json::Value Thing::dump2JSON(void)
     result["item"] = Description; 
 
     return result;
-
 }
 
 bool
 Thing::JSON2Object(Json::Value arg_jv)
 {
-        if( (arg_jv.isNull() == true) || (arg_jv.isObject() != true) )
+    if( (arg_jv.isNull() == true) || 
+        (arg_jv.isObject() != true))
     {
         return false;
     }
@@ -32,8 +32,6 @@ Thing::JSON2Object(Json::Value arg_jv)
         return false;
     }
 
-    this->Description = (arg_jv["Description"]).asString();
-
-
+    this->Description = (arg_jv["item"]).asString();
     return true;
 }

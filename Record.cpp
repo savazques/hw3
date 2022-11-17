@@ -4,6 +4,8 @@
 Record::Record()
 {
     this->person = Person{};
+    this -> person2 = Person{};
+    this -> thing2 = Thing{}; 
     this->thing = Thing{}; 
     this->loc = GPS{}; 
     this->when = Time{}; 
@@ -29,7 +31,7 @@ Json::Value Record::dump2JSON(void)
         result["Person 1"] = jvResult;
 
     jvResult = (this->person2).dump2JSON(); 
-        result["Person2 2"] = jvResult; 
+        result["Person 2"] = jvResult; 
         
     
     jvResult = (this->thing).dump2JSON();
@@ -64,45 +66,48 @@ Record::JSON2Object
     }
 
 
-if  (((arg_jv["loc"]).isNull() == true ) || ((arg_jv["loc"]).isObject() != true) )
+if  (((arg_jv["loc"]).isNull() == true ) || 
+    ((arg_jv["loc"]).isObject() != true) )
 {
     return false; 
 }
-(this -> loc).JSON2Object(arg_jv["loc"]); 
+(this -> loc).JSON2Object(arg_jv["area"]); 
 
-if ( ((arg_jv["thing"]).isNull() == true) || ((arg_jv["thing"]).isObject() != true) )
+if ( ((arg_jv["thing"]).isNull() == true) ||  
+    ((arg_jv["thing"]).isObject() != true) )
 {
     return false;
 }
 (this -> thing).JSON2Object(arg_jv["item"]);
 
-if ( ((arg_jv["person"]).isNull() == true) || ((arg_jv["person"]).isObject() != true) )
+if ( ((arg_jv["person"]).isNull() == true) || 
+    ((arg_jv["person"]).isObject() != true) )
 {
     return false; 
 } 
 (this -> person).JSON2Object(arg_jv["person"]);
 
-if(((arg_jv["when"]).isNull() == true) || ((arg_jv["when"]).isObject() != true))
+if (((arg_jv["when"]).isNull() == true) || 
+    ((arg_jv["when"]).isObject() != true))
 {
     return false;
 } 
 (this -> when).JSON2Object(arg_jv["when"]); 
 
-if(((arg_jv["person2"]).isNull() == true) || ((arg_jv["person2"]).isObject()!= true))
+if  (((arg_jv["name"]).isNull() == true) || 
+    ((arg_jv["name"]).isObject()!= true))
 {
     return false;
 }
-(this -> person2).JSON2Object(arg_jv["person2"]);
+(this -> person2).JSON2Object(arg_jv["name"]);
     
     
-if(((arg_jv["thing2"]).isNull() == true) || ((arg_jv["thing2"]).isObject() != true))
+if  (((arg_jv["name"]).isNull() == true) || 
+    ((arg_jv["item"]).isObject() != true))
 {
     return false; 
 } 
-
-(this -> thing2).JSON2Object(arg_jv["thing2"]); 
-
-
+(this -> thing2).JSON2Object(arg_jv["item"]); 
 
 
 return true;
