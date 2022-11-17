@@ -53,20 +53,23 @@ Json::Value Record::dump2JSON(void)
     return result;
 }
 
-bool Record::JSON2Object(Json::Value arg_jv)
+bool 
+Record::JSON2Object
+(Json::Value arg_jv)
 {
-    if ((arg_jv.isNull() == true) || (arg_jv.isObject() != true))
+    if ((arg_jv.isNull() == true) || 
+        (arg_jv.isObject() != true))
     {
         return false; 
     }
 
 
-if (((arg_jv["loc"]).isNull() == true ) || ((arg_jv["loc"]).isNull() == true) 
+if  (((arg_jv["loc"]).isNull() == true ) || ((arg_jv["loc"]).isNull() == true) 
     || ((arg_jv["thing"]).isNull() == true) || ((arg_jv["thing"]).isNull() == true) 
     || ((arg_jv["person"]).isObject() != true) || ((arg_jv["person"]).isObject() != true) 
     || ((arg_jv["when"]).isObject() != true) || ((arg_jv["when"]).isObject() != true)
-    || ((arg_jv["person2"].isNull() == true) || (arg_jv["person2"].isObject()!= true) )
-    || (arg_jv["thing2"].isNull() == true) || (arg_jv["thing2"].isObject() != true))
+    || ((arg_jv["person2"]).isNull() == true) || ((arg_jv["person2"]).isObject()!= true) 
+    || ((arg_jv["thing2"]).isNull() == true) || ((arg_jv["thing2"]).isObject() != true))
 
 {
     return false; 
