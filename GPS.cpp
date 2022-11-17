@@ -28,12 +28,12 @@ GPS::JSON2Object(Json::Value arg_jv)
     }
 
 
-    if (((arg_jv["Description"]).isNull( ) == true) || ((arg_jv["Description"]).isString() != true) )
+    if (((arg_jv["area"]).isNull( ) == true) || ((arg_jv["area"]).isString() != true) )
     {
         return false;
     }
 
-    this -> Description = (arg_jv["Description"]).asString();
+    this -> Description = (arg_jv["area"]).asString();
 
 
     return true;

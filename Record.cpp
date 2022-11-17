@@ -66,48 +66,48 @@ Record::JSON2Object
     }
 
 
-if  (((arg_jv["loc"]).isNull() == true ) || 
-    ((arg_jv["loc"]).isObject() != true) )
+if  (((arg_jv["GPS"]).isNull() == true ) || 
+    ((arg_jv["GPS"]).isObject() != true) )
 {
     return false; 
 }
 (this -> loc).JSON2Object(arg_jv["area"]); 
 
-if ( ((arg_jv["thing"]).isNull() == true) ||  
-    ((arg_jv["thing"]).isObject() != true) )
+if ( ((arg_jv["Thing"]).isNull() == true) ||  
+    ((arg_jv["Thing"]).isObject() != true) )
 {
     return false;
 }
 (this -> thing).JSON2Object(arg_jv["item"]);
 
-if ( ((arg_jv["person"]).isNull() == true) || 
-    ((arg_jv["person"]).isObject() != true) )
+if ( ((arg_jv["Person 1"]).isNull() == true) || 
+    ((arg_jv["Person 1"]).isObject() != true) )
 {
     return false; 
 } 
-(this -> person).JSON2Object(arg_jv["person"]);
+(this -> person).JSON2Object(arg_jv["Person 1"]);
 
-if (((arg_jv["when"]).isNull() == true) || 
-    ((arg_jv["when"]).isObject() != true))
+if (((arg_jv["Time"]).isNull() == true) || 
+    ((arg_jv["Time"]).isObject() != true))
 {
     return false;
 } 
-(this -> when).JSON2Object(arg_jv["when"]); 
+(this -> when).JSON2Object(arg_jv["Time"]); 
 
-if  (((arg_jv["name"]).isNull() == true) || 
-    ((arg_jv["name"]).isObject()!= true))
+if  (((arg_jv["Person 2"]).isNull() == true) || 
+    ((arg_jv["Person 2"]).isObject()!= true))
 {
     return false;
 }
-(this -> person2).JSON2Object(arg_jv["name"]);
+(this -> person2).JSON2Object(arg_jv["Person 2"]);
     
     
-if  (((arg_jv["name"]).isNull() == true) || 
-    ((arg_jv["item"]).isObject() != true))
+if  (((arg_jv["Thing 2"]).isNull() == true) || 
+    ((arg_jv["Thing 2"]).isObject() != true))
 {
     return false; 
 } 
-(this -> thing2).JSON2Object(arg_jv["item"]); 
+(this -> thing2).JSON2Object(arg_jv["Thing 2"]); 
 
 
 return true;
