@@ -1,0 +1,10 @@
+Sarah Vasquez 919447291
+Margret Curiel 
+
+In this program when compiling the Makefile which now includes the 
+ecs36b_JSON.cpp which will have funcitons that willl alow us to
+convert the program into a .Json file with the myJSON2File and 
+then we created Json::Value variable that called record_jv that will
+be passed through the myFile2JSON in order to give the record_jv variable the JSON Valued from each record. 
+We then call the myObject2JSON that will check each value of the JSON and see if it 
+is it's correct data type and more specifically Object type. 
