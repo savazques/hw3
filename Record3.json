@@ -1,19 +1,19 @@
 {
 	"GPS" : 
 	{
-		"area" : "somewhere"
+		"area" : " a particular spot in the woods"
 	},
 	"Person 1" : 
 	{
-		"name" : "Red Riding Hood"
+		"name" : "Wolf"
 	},
 	"Person2 2" : 
 	{
-		"name" : ""
+		"name" : "Red Riding Hood"
 	},
 	"Thing" : 
 	{
-		"item" : "a cap of red Velvet"
+		"item" : "thing"
 	},
 	"Thing 2" : 
 	{
