@@ -73,9 +73,10 @@ Json::Value record2_jv;
 rv = myFile2JSON(filename2, &record2_jv);
 if (rv != 0)
     {
-        std::cout << "myJSON2File error" <<std::endl;
+        std::cout << "myJSON2File error" << rc << std::endl;
         exit (-1); 
     } 
+//creating a new record object and filling them in with JSON2Object
 Record new_record2 {}; 
     new_record2.JSON2Object(record2_jv); 
     std::cout << (new_record2.dump2JSON()).toStyledString() << std:: endl;

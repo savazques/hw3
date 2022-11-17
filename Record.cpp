@@ -64,22 +64,42 @@ Record::JSON2Object
     }
 
 
-if  (((arg_jv["loc"]).isNull() == true ) || ((arg_jv["loc"]).isNull() == true) 
-    || ((arg_jv["thing"]).isNull() == true) || ((arg_jv["thing"]).isNull() == true) 
-    || ((arg_jv["person"]).isObject() != true) || ((arg_jv["person"]).isObject() != true) 
-    || ((arg_jv["when"]).isObject() != true) || ((arg_jv["when"]).isObject() != true)
-    || ((arg_jv["person2"]).isNull() == true) || ((arg_jv["person2"]).isObject()!= true) 
-    || ((arg_jv["thing2"]).isNull() == true) || ((arg_jv["thing2"]).isObject() != true))
-
+if  (((arg_jv["loc"]).isNull() == true ) || ((arg_jv["loc"]).isObject() != true) )
 {
     return false; 
 }
-
 (this -> loc).JSON2Object(arg_jv["loc"]); 
+
+if ( ((arg_jv["thing"]).isNull() == true) || ((arg_jv["thing"]).isObject() != true) )
+{
+    return false;
+}
 (this -> thing).JSON2Object(arg_jv["item"]);
+
+if ( ((arg_jv["person"]).isNull() == true) || ((arg_jv["person"]).isObject() != true) )
+{
+    return false; 
+} 
 (this -> person).JSON2Object(arg_jv["person"]);
+
+if(((arg_jv["when"]).isNull() == true) || ((arg_jv["when"]).isObject() != true))
+{
+    return false;
+} 
 (this -> when).JSON2Object(arg_jv["when"]); 
+
+if(((arg_jv["person2"]).isNull() == true) || ((arg_jv["person2"]).isObject()!= true))
+{
+    return false;
+}
 (this -> person2).JSON2Object(arg_jv["person2"]);
+    
+    
+if(((arg_jv["thing2"]).isNull() == true) || ((arg_jv["thing2"]).isObject() != true))
+{
+    return false; 
+} 
+
 (this -> thing2).JSON2Object(arg_jv["thing2"]); 
 
 

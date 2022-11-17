@@ -3,7 +3,7 @@
 
 Person::Person()
 {
-    this->Name = ""; 
+    this->Name = "    "; 
 }
 
 Person::Person(string name)
@@ -28,11 +28,11 @@ Person::JSON2Object(Json::Value arg_jv)
         return false;
     }
 
-    if (((arg_jv["Name"]).isNull() == true) || ((arg_jv["Name"]).isString() != true))
+    if (((arg_jv["name"]).isNull() == true) || ((arg_jv["name"]).isString() != true))
     {
         return false;
     }
-    this->Name = (arg_jv["Name"]).asString();
+    this->Name = (arg_jv["name"]).asString().c_str();
 
     return true;
 }

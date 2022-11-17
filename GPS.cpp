@@ -33,7 +33,7 @@ GPS::JSON2Object(Json::Value arg_jv)
         return false;
     }
 
-    this ->Description = (arg_jv["Description"]).asString();
+    this -> Description = (arg_jv["Description"]).asString().c_str();
 
 
     return true;

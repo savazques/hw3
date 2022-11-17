@@ -33,7 +33,7 @@ Time::JSON2Object(Json::Value arg_jv)
         return false;
     }
 
-    this ->when = (arg_jv["when"]).asString();
+    this ->when = (arg_jv["when"]).asString().c_str();
 
 
     return true;
